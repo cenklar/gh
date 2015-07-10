@@ -1,3 +1,4 @@
+
 import processing.net.*;
 import processing.pdf.*;
 import hypermedia.net.*;
@@ -77,10 +78,16 @@ int z = 0;  //ojo que hay que inicializarlo cada vez que se le utilize
    String[] lista = new String[data.length]; //se genera string tamaño adecuado, de la longitud del mensaje que llego
    lista = split(numeros,'\n');  //se fracciona "numeros"[pos]
 
+ 
   
  //llenado de array2d 
 
 //condición: lista[0] = valores1
+
+//(Character.valueOf(lista[0])
+
+//if (Character.valueOf(lista[0]) = asd) {
+//}
 
 float[][] matriz = new float[colsaray][rowsaray]; //2d array, valores sabidos por excel 
 // String compara1 = new String("valores1");
@@ -125,7 +132,7 @@ float[][] matriz = new float[colsaray][rowsaray]; //2d array, valores sabidos po
       //ellipse(width*0.5,length*0.5, matriz[i][j],matriz[i][j]);
     // square = createShape(ELLIPSE,width*0.5,length*0.5, matriz[i][j],matriz[i][j]);
    // println(maxi/escalador); 
- println(mini/escalador);
+ // println(mini/escalador);
  //println(mid);
  //println(rmini + mid);
 // }
