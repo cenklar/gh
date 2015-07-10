@@ -70,15 +70,13 @@ int variable = 30;
   //int i = 0;
 int colsaray = 6;
 int rowsaray = 3;
-int z = 0;  //ojo que hay que inicializarlo cada vez que se le utilize
-
+int z = 1;  //ojo que hay que inicializarlo cada vez que se le utilize
+// parti en 1 porque en 0 está la palabra identificadora
 
  // data = subset(data, 0, datos.length); //ni idea
    String numeros = new String(data); //"raw data"
    String[] lista = new String[data.length]; //se genera string tamaño adecuado, de la longitud del mensaje que llego
-   lista = split(numeros,'\n');  //se fracciona "numeros"[pos]
-
- 
+   lista = split(numeros,'\n');  //se fracciona "numeros"[pos], cada '\n' -> line feed
   
  //llenado de array2d 
 
@@ -95,28 +93,29 @@ float[][] matriz = new float[colsaray][rowsaray]; //2d array, valores sabidos po
 //if (lista[0] = "compara1") {
 //String[] compara1 = new String[lista.length];  
 //compara1[0] = "valores1";
- String compara1 = "valores1";
+ String compara1 = "valores1\r";  // ojo con \r que implica un ENTER
 // println(compara1);
 //String compara2 = lista[0].length;
 
 if (lista[0].equals(compara1) == true){ 
   println("hola"); 
-}
-else {
- println("missed it");       //ojo con los println de abajo
- println(compara1); 
- println(compara1.length());
- println(lista[0]);
- println(lista[0].length());
-}
+
+// println("missed it");       //ojo con los println de abajo
+// println(compara1); 
+// println(compara1.length());
+// println(lista[0]);
+// println(lista[0].length());
+
 // llenado de Matrix [i][j]  
- // for (int i = 0; i < colsaray; i++) {
-   // for (int j = 0; j < rowsaray; j++){
-   //matriz[i][j] = Float.valueOf(lista[z]) * escalador; // lista[] se lee de 0 hasta 6x3 veces  
-   //z = z + 1;                                          // contador lineal
-  // }
- // }
-    
+ for (int i = 0; i < colsaray; i++) {
+   for (int j = 0; j < rowsaray; j++){
+    matriz[i][j] = Float.valueOf(lista[z]) * escalador; // lista[] se lee de 0 hasta 6x3 veces  
+    z = z + 1;                                          // contador lineal
+     }
+  }
+ 
+}
+   
 
  
   
