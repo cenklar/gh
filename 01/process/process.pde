@@ -93,12 +93,29 @@ float[][] matriz = new float[colsaray][rowsaray]; //2d array, valores sabidos po
 // String compara1 = new String("valores1");
 
 //if (lista[0] = "compara1") {
-  for (int i = 0; i < colsaray; i++) {
-    for (int j = 0; j < rowsaray; j++){
-   matriz[i][j] = Float.valueOf(lista[z]) * escalador; // lista[] se lee de 0 hasta 6x3 veces  
-   z = z + 1;                                          // contador lineal
-   }
-  }
+//String[] compara1 = new String[lista.length];  
+//compara1[0] = "valores1";
+ String compara1 = "valores1";
+// println(compara1);
+//String compara2 = lista[0].length;
+
+if (lista[0].equals(compara1) == true){ 
+  println("hola"); 
+}
+else {
+ println("missed it");       //ojo con los println de abajo
+ println(compara1); 
+ println(compara1.length());
+ println(lista[0]);
+ println(lista[0].length());
+}
+// llenado de Matrix [i][j]  
+ // for (int i = 0; i < colsaray; i++) {
+   // for (int j = 0; j < rowsaray; j++){
+   //matriz[i][j] = Float.valueOf(lista[z]) * escalador; // lista[] se lee de 0 hasta 6x3 veces  
+   //z = z + 1;                                          // contador lineal
+  // }
+ // }
     
 
  
@@ -140,12 +157,12 @@ float[][] matriz = new float[colsaray][rowsaray]; //2d array, valores sabidos po
   }
  
  
-  for (int i = 0; i < lista.length; i = i+1)  {
+//  for (int i = 0; i < lista.length; i = i+1)  {
  // stroke(variable);
 //  noFill();
 //  ellipse(width*0.5,length*0.5,lista[i],lista[i]); 
-  variable = variable + 35;
- }
+//  variable = variable + 35;
+// }
 
  
 //println(lista[2]);
@@ -160,7 +177,7 @@ largo = lista.length;
 
 void draw() {
 
-if ( control == 1 ){
+//if ( control == 1 ){
 //shape(macir);
-}
+//}
 }
