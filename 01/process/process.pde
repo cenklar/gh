@@ -8,7 +8,7 @@ UDP udp;
 
 PShape square, micir, macir;  
 
-int width = 450;
+int width = 900;
 int length = 450;
 int count = 0;
 int control = 0;
@@ -19,7 +19,7 @@ float maxi = 0;
 int escalador = 18;
 
 void setup() {
-  size(length, width);
+  size(width, length);
   smooth();
   background(120);
   //beginRecord(PDF, "holanda.pdf");
@@ -87,22 +87,23 @@ int z = 1;  //ojo que hay que inicializarlo cada vez que se le utilize
 //if (Character.valueOf(lista[0]) = asd) {
 //}
 
-float[][] matriz = new float[colsaray][rowsaray]; //2d array, valores sabidos por excel 
-// String compara1 = new String("valores1");
+float[][] matriz = new float[colsaray][rowsaray];//2d array, valores sabidos por excel 
+float[][] matriz2 = new float[colsaray][rowsaray];
+String compara1 = "valores1\r";  // ojo con \r que implica un ENTER
+String compara2 = "valores2\r";
 
-//if (lista[0] = "compara1") {
-//String[] compara1 = new String[lista.length];  
-//compara1[0] = "valores1";
- String compara1 = "valores1\r";  // ojo con \r que implica un ENTER
-// println(compara1);
-//String compara2 = lista[0].length;
 
+ //println(lista[1]);
+// println(lista.length);
+ 
 if (lista[0].equals(compara1) == true){ 
-  println("hola"); 
+ z = 1;
+
+ //println("hola"); 
 
 // println("missed it");       //ojo con los println de abajo
 // println(compara1); 
-// println(compara1.length());
+// println(compara1.length()); // ojo con los paréntesis en length()
 // println(lista[0]);
 // println(lista[0].length());
 
@@ -113,12 +114,23 @@ if (lista[0].equals(compara1) == true){
     z = z + 1;                                          // contador lineal
      }
   }
+ }
  
-}
+// matriz2 
+if (lista[0].equals(compara2) == true){ 
+ z = 1;  // no entiendo por qué 2 va aqui
+// llenado de Matrix2 [i][j]  
+ for (int i = 0; i < colsaray; i++) {
+   for (int j = 0; j < rowsaray; j++){
+    matriz2[i][j] = Float.valueOf(lista[z]) * escalador; // lista[] se lee de 0 hasta 6x3 veces  
+    z = z + 1;                                          // contador lineal
+     }
+  }
+ } 
    
-
- 
-  
+//println(matriz[0][0]/escalador);
+//println(matriz2[0][0]/escalador);
+println(lista.length);  
 //vienen los ciclos FOR de análisis
 
  for (int i = 0; i < colsaray; i++) {
@@ -139,7 +151,7 @@ if (lista[0].equals(compara1) == true){
   strokeWeight(stroker);
   control = 1;
   // shape(macir);
-   ellipse(width*0.5,length*0.5,rmini + mid,rmini + mid);   
+   ellipse(width/4,length*0.5,rmini + mid,rmini + mid);   
    
     //ellipse(width*0.5,length*0.5, rmini,rmini); //la mayor y la menor
     //ellipse(width*0.5,length*0.5, rmaxi,rmaxi); // ojo que redondié los floats porque son pixeles 
