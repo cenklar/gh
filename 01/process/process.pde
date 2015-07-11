@@ -8,6 +8,10 @@ UDP udp;
 
 PShape square, micir, macir;  
 
+int colsaray = 6;
+int rowsaray = 3;
+float[][] matriz = new float[colsaray][rowsaray];//2d array, valores sabidos por excel   //testeo en global
+float[][] matriz2 = new float[colsaray][rowsaray];
 int width = 900;
 int length = 450;
 int count = 0;
@@ -68,8 +72,7 @@ void receive( byte[] data, String ip, int port){ //test, data corresponde a un m
 int variable = 30;
 //void receive( byte[] datos, String ip, int port ) {  // <-- extended handler
   //int i = 0;
-int colsaray = 6;
-int rowsaray = 3;
+
 int z = 1;  //ojo que hay que inicializarlo cada vez que se le utilize
 // parti en 1 porque en 0 está la palabra identificadora
 
@@ -87,14 +90,14 @@ int z = 1;  //ojo que hay que inicializarlo cada vez que se le utilize
 //if (Character.valueOf(lista[0]) = asd) {
 //}
 
-float[][] matriz = new float[colsaray][rowsaray];//2d array, valores sabidos por excel 
-float[][] matriz2 = new float[colsaray][rowsaray];
+//float[][] matriz = new float[colsaray][rowsaray];//2d array, valores sabidos por excel   //los pondré arriba!
+//float[][] matriz2 = new float[colsaray][rowsaray]; //sirven en global, porque aquí se borran ambos en cada ciclo de lectura
 String compara1 = "valores1\r";  // ojo con \r que implica un ENTER
 String compara2 = "valores2\r";
 
 
- //println(lista[1]);
-// println(lista.length);
+//println(lista[1]);
+//println(lista.length);
  
 if (lista[0].equals(compara1) == true){ 
  z = 1;
@@ -128,9 +131,9 @@ if (lista[0].equals(compara2) == true){
   }
  } 
    
-//println(matriz[0][0]/escalador);
-//println(matriz2[0][0]/escalador);
-println(lista.length);  
+println(matriz[0][0]/escalador);  //ojo con esta seguidilla de prints, al parecer resultó bien!!!!
+println(matriz2[0][0]/escalador);
+println(lista[0]);
 //vienen los ciclos FOR de análisis
 
  for (int i = 0; i < colsaray; i++) {
